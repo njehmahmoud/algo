@@ -1,0 +1,26 @@
+ALGORITHM sentence
+VAR
+l, nbrWords, j, i, vowels  :INTEGER;
+sentence : STRING;
+BEGIN
+    
+    l, vowels:=0;
+    nbrWords :=1;
+    sentence:= "we are go my code."
+    FOR i FROM 0 TO length(sentence) DO
+        IF (sentence[i] in ['a'..'Z']) THEN
+            l:= l+1 ;
+            IF (sentence[i] in ['a','e','i','u','o']) THEN
+                vowels:=vowels+1;
+            END_IF
+        END_IF
+    END_FOR
+    
+    WHILE (sentence[j]<>'.') DO
+        FOR j FROM 0 TO length(sentence) DO
+            IF (sentence[j]= ' ' and sentence[j+1]<>' ') THEN
+                nbrWords:=nbrWords+1;
+            END_IF
+        END_FOR
+    END_WHILE
+END
